@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper 
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+ <mapper namespace="org.ict.mapper.VoteMapper">
+ 	<select id="read" resultType="org.ict.domain.VoteVO">
+<!--  	조합옷이랑 상의 하의 옷  데이터 싹 긁어온다. -->
+ 	
+ 	SELECT * FROM cgmix WHERE cgmixno > 0
+ 	
+ 	</select>
+ 	<update id="update">
+ 		UPDATE cgmix
+ 			SET
+ 		cglike_cnt = cglike_cnt + 1
+ 		WHERE
+ 			cgmixno = #{cgmixno}
+ 		
+ 	</update>
+ </mapper>
