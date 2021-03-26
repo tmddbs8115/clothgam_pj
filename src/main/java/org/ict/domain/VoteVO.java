@@ -12,4 +12,6 @@ public class VoteVO {
 	private boolean cgcgender;
 	private boolean cggender;
 	private int cgage;
+	
+	private boolean next;
 }

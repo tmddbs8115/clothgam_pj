@@ -16,6 +16,7 @@
  		cglike_cnt = cglike_cnt + 1
  		WHERE
  			cgmixno = #{cgmixno}
- 		
  	</update>
+ 	
+ 	
  </mapper>

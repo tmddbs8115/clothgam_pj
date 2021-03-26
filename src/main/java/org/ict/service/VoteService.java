@@ -7,4 +7,5 @@ public interface VoteService {
 	public void upcount(VoteVO vote);
 	
 	public VoteVO load(Long cgmixno);
+
 }
