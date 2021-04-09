@@ -1,5 +1,7 @@
 package org.ict.service;
 
+import java.util.List;
+
 import org.ict.domain.VoteVO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,9 +23,9 @@ public class VoteServiceTests {
 	@Test
 	public void testLoad() {
 		
-		VoteVO vote = service.load(1L);
+//		List<VoteVO> vote = service.load(1L);
 		
-		log.info(vote);
+//		log.info(vote);
 		
 		
 	}
@@ -31,12 +33,12 @@ public class VoteServiceTests {
 //	@Test
 	public void testUpcount() {
 		
-		VoteVO vote = new VoteVO();
+		List<VoteVO> vote = (List<VoteVO>) new VoteVO();
 		
-		vote = service.load(1L);
+//		vote = service.load(1L);
 		
 
-		service.upcount(vote);
+		service.upcount((VoteVO) vote);
 		
 		
 		

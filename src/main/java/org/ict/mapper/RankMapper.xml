@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper 
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+ 
+  <mapper namespace="org.ict.mapper.RankMapper">
+ <select id="getList" resultType="org.ict.domain.RankVO">
+ 	SELECT * FROM cgrank WHERE cgrno > 0
+ </select>
+ 
+ 
+ <select id="read" resultType="org.ict.domain.RankVO">
+	    SELECT c.cglikeno, c.cgupcno, c.cgdowncno,
+			up.cgupclink, up.cgupcimg,
+            down.cgdownclink, down.cgdowncimg
+            FROM cglike AS c, cgupcloth AS up, cgdowncloth AS down
+            WHERE c.cgupcno = up.cgupcno AND c.cgdowncno = down.cgdowncno
+            AND cglikeno = #{cglikeno}
+	</select>
+	
+	<select id="likeList" resultType="org.ict.domain.RankVO">
+		select c.cglikeno, c.cgdowncno, c.cglike_cnt,
+		up.cgupcgen, up.cgupclink, up.cgupcimg,
+		down.cgdowncgen, down.cgdownclink, down.cgdowncimg
+		from cglike as c, cgupcloth as up, cgdowncloth as down
+		where c.cgupcno = up.cgupcno and c.cgdowncno = down.cgdowncno
+		and cglikeno > 0
+		order by cglike_cnt desc
+	</select>
+ 	
+ 	<select id="rank" resultType="org.ict.domain.RankVO">
+	 	select * from cgrank Where cgrno >0
+ 	</select>
+ 
+ 
+ </mapper>
